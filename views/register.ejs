@@ -7,12 +7,21 @@
     <link rel="stylesheet" href="/stylesheets/register.css">
     <title>register</title>
 </head>
-<body class="register">
+
+<body class="register" style="background-color: <%=session.theme%>;">
 <header>
 
 </header>
 
 <main>
+
+    <% if(locals.persona){ %>
+        <p>
+            Hola ​<%=persona.name%> ​, elegiste el color:<%=persona.theme%>​, tu email es: 
+<%=persona.email%>  ​y tu edad es: <%=persona.age%> 
+        </p>
+   <%  }else { %> 
+
     <form action="/register" method="POST">
 
 
@@ -34,19 +43,21 @@
         <%}%>
 
         <label for="email">Ingrese su email :</label>
-        <input type="email" name="email">
+        <input type="text" name="email">
         <%if( locals.errors && locals.errors.email){%>
             <p style="color: red; font-size: 15px;"><%=errors.email.msg%></p>
         <%}%>
 
         <label for="age">Ingrese su edad :</label>
-        <input type="number" name="age">
+        <input type="text" name="age">
         <%if( locals.errors && locals.errors.age){%>
             <p style="color: red; font-size: 15px;"><%=errors.age.msg%></p>
         <%}%>
 
         <button type="submit">Enviar</button>
+
    </form>
+   <% } %> 
 </main>
 </body>
 </html>

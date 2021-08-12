@@ -4,8 +4,8 @@ var router = express.Router();
 const controller = require("../controller/registerController");
 
 /* GET home page. */
-router.get('/register',controller.register);
-router.post('/register',controller.Processregister);
+router.get('/',controller.register);
+router.post('/',controller.Processregister);
 
 
 module.exports = router;

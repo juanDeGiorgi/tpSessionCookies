@@ -14,8 +14,14 @@
 
 <main>
     <form action="/register" method="POST">
+
+
         <label for="name">Nombre :</label>
         <input type="text" name="name">
+        <%if( locals.errors && locals.errors.name){%>
+            <p style="color: red; font-size: 15px;"><%=errors.name.msg%></p>
+        <%}%>
+
         <label for="name">Color de fondo :</label>
         <select class="theme" name="theme" >
             <option selected hidden>color</option>
@@ -23,10 +29,22 @@
             <option>Rojo</option>
             <option>Azul</option>
         </select>
+        <%if( locals.errors && locals.errors.theme){%>
+            <p style="color: red; font-size: 15px;"><%=errors.theme.msg%></p>
+        <%}%>
+
         <label for="email">Ingrese su email :</label>
         <input type="email" name="email">
+        <%if( locals.errors && locals.errors.email){%>
+            <p style="color: red; font-size: 15px;"><%=errors.email.msg%></p>
+        <%}%>
+
         <label for="age">Ingrese su edad :</label>
         <input type="number" name="age">
+        <%if( locals.errors && locals.errors.age){%>
+            <p style="color: red; font-size: 15px;"><%=errors.age.msg%></p>
+        <%}%>
+
         <button type="submit">Enviar</button>
    </form>
 </main>

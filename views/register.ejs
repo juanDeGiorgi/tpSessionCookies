@@ -17,7 +17,7 @@
 
 
         <label for="name">Nombre :</label>
-        <input type="text" name="name" value="<%=old.name %>">
+        <input type="text" name="name" value="<%= typeof old != "undefined" ? old.name : "" %>">
         <%if( locals.errors && locals.errors.name){%>
             <p style="color: red; font-size: 15px;"><%=errors.name.msg%></p>
         <%}%>

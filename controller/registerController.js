@@ -15,7 +15,8 @@ module.exports = {
                 edad: req.body.age,
             })
         }else{
-             res.render('register',{errors : errors.mapped()}) /* Renderizo la vista del formulario junto con los errores. El mapped() convierte el array en un objeto para poder acceder a c/u de sus atributos */
+             res.render('register',{errors : errors.mapped(), old : req.body}) /* Renderizo la vista del formulario junto con los errores. El mapped() convierte el array en un objeto para poder acceder a c/u de sus atributos */
+    
         }
        
 

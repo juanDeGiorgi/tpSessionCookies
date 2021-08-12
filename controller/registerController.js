@@ -9,10 +9,7 @@ module.exports = {
         const errors= validationResult(req) /* La constante almacena el resultado de las validaciones de lo que viene a través de req. */
         if(errors.isEmpty()){
             res.render('register',{
-                usuarioName : req.body.name,
-                color : req.body.theme,
-                email: req.body.email,
-                edad: req.body.age,
+                persona: req.body
             })
         }else{
             res.render('register',{

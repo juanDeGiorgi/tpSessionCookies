@@ -24,10 +24,10 @@
 
         <label for="name">Color de fondo :</label>
         <select class="theme" name="theme" >
-            <option selected hidden>color</option>
-            <option>Verde</option>
-            <option>Rojo</option>
-            <option>Azul</option>
+            <option selected hidden value="">color</option>
+            <option value="green">Verde</option>
+            <option value="red">Rojo</option>
+            <option value="blue">Azul</option>
         </select>
         <%if( locals.errors && locals.errors.theme){%>
             <p style="color: red; font-size: 15px;"><%=errors.theme.msg%></p>
